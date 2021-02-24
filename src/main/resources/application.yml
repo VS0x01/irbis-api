@@ -1,0 +1,34 @@
+info:
+  spring:
+    profiles: ${spring.profiles.active:default}
+
+spring:
+  profiles:
+    active: dev
+
+irbis:
+  host: !!str 127.0.0.1
+  port: 6666
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+server:
+  port: 8081
+
+irbis:
+  user: MASTER
+  password: MASTERKEY
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+irbis:
+  host:
+    host: !!str 100.96.1.2
