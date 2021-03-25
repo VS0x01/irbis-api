@@ -20,6 +20,7 @@ server:
   port: 8081
 
 irbis:
+  host: !!str 10.8.1.1
   user: MASTER
   password: MASTERKEY
 
@@ -30,5 +31,4 @@ spring:
       on-profile: prod
 
 irbis:
-  host:
-    host: !!str 100.96.1.2
+  host: !!str 10.1.1.3

@@ -1,4 +1,4 @@
-package ua.edu.kneu.irbisapi;
+package ua.edu.kneu.irbisapi.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import ru.arsmagna.IrbisConnection;
 import ru.arsmagna.IrbisException;
+import ua.edu.kneu.irbisapi.AllFormatRecordsConverter;
+import ua.edu.kneu.irbisapi.IFormatRecordsConverter;
 
 import java.io.IOException;
 

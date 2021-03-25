@@ -15,7 +15,6 @@ import java.util.stream.IntStream;
 public class RecordDAO {
     private final IrbisConnection connection;
     private IFormatRecordsConverter format;
-    private final String dbName = "ATHRA";
 
     public RecordDAO(IrbisConnection connection, IFormatRecordsConverter format) {
         this.connection = connection;
@@ -24,7 +23,6 @@ public class RecordDAO {
 
     public MarcRecord[] getAll() {
         try {
-            connection.pushDatabase(dbName);
             int maxMFN = connection.getMaxMfn(connection.database);
             String[] lines = connection.formatRecords(format.getFormat(), IntStream.range(1, maxMFN).toArray());
             List<MarcRecord> result = new ArrayList<>();
@@ -33,10 +31,8 @@ public class RecordDAO {
                     lines) {
                 MarcRecord record = format.formatRecordToMarc(line);
                 if (record == null) continue;
-                record.database = connection.database;
                 result.add(record);
             }
-            connection.popDatabase();
 
             return result.toArray(MarcRecord[]::new);
         } catch (IOException | IrbisException e) {
@@ -47,10 +43,7 @@ public class RecordDAO {
 
     public MarcRecord get(int mfn) {
         try {
-            connection.pushDatabase(dbName);
-            MarcRecord record = connection.readRecord(mfn);
-            record.database = connection.database;
-            connection.popDatabase();
+            MarcRecord record = connection.readRecord(connection.database, mfn);
             return record;
         } catch (IOException | IrbisException e) {
             e.printStackTrace();

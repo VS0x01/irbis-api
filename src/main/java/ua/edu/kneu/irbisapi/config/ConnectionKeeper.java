@@ -1,4 +1,4 @@
-package ua.edu.kneu.irbisapi;
+package ua.edu.kneu.irbisapi.config;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
