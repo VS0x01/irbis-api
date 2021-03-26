@@ -7,6 +7,6 @@ import ru.arsmagna.MarcRecord;
 public class AuthorMapper implements IRecordMapper<AuthorDTO> {
     @Override
     public AuthorDTO map(MarcRecord record) {
-        return new AuthorDTO(record.fm(210, 'g'), record.fm(210, 'a'));
+        return new AuthorDTO(record.mfn, record.fm(210, 'g'), record.fm(210, 'a'));
     }
 }
