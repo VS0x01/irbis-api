@@ -4,7 +4,7 @@ public enum Databases {
     AUTHORS ("ATHRA"),
     WORKS ("WORKS");
 
-    private String name;
+    private final String name;
 
     Databases(String name) {
         this.name = name;
