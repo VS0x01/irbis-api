@@ -1,4 +1,4 @@
-package ua.edu.kneu.irbisapi;
+package ua.edu.kneu.irbisapi.config;
 
 public enum Databases {
     AUTHORS ("ATHRA"),

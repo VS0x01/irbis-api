@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 import ru.arsmagna.IrbisConnection;
-import ua.edu.kneu.irbisapi.Databases;
+import ua.edu.kneu.irbisapi.config.Databases;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

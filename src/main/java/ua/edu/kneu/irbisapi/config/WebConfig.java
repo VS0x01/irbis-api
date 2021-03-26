@@ -3,7 +3,6 @@ package ua.edu.kneu.irbisapi.config;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import ua.edu.kneu.irbisapi.Databases;
 import ua.edu.kneu.irbisapi.interceptors.DBChooser;
 
 import java.util.Arrays;
