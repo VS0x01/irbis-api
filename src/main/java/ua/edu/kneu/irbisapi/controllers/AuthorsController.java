@@ -4,26 +4,28 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.arsmagna.MarcRecord;
-import ua.edu.kneu.irbisapi.dal.RecordDAO;
+import ua.edu.kneu.irbisapi.dal.AuthorDTO;
+import ua.edu.kneu.irbisapi.services.AuthorService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("authors")
 public class AuthorsController {
-    private final RecordDAO recordDAO;
+    private final AuthorService authorService;
 
-    public AuthorsController(RecordDAO recordDAO) {
-        this.recordDAO = recordDAO;
+    public AuthorsController(AuthorService authorService) {
+        this.authorService = authorService;
     }
 
     @GetMapping
-    public MarcRecord[] index() {
-        return recordDAO.getAll();
+    public List<AuthorDTO> index() {
+        return authorService.loadAllAuthors();
     }
 
     @GetMapping("{mfn}")
-    public MarcRecord show(@PathVariable int mfn) {
-        return recordDAO.get(mfn);
+    public AuthorDTO show(@PathVariable int mfn) {
+        return authorService.loadAuthorByMfn(mfn);
     }
 
 }

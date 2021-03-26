@@ -1,8 +1,8 @@
 package ua.edu.kneu.irbisapi.config;
 
 public enum Databases {
-    AUTHORS ("ATHRA"),
-    WORKS ("WORKS");
+    AUTHORS("ATHRA"),
+    WORKS("WORKS");
 
     private final String name;
 

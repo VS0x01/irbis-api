@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 
 @Component
 public class WebConfig implements WebMvcConfigurer {
-    DBChooser dbChooser;
-    List<String> patterns;
+    private final DBChooser dbChooser;
+    private final List<String> patterns;
 
     public WebConfig(DBChooser dbChooser) {
         this.dbChooser = dbChooser;

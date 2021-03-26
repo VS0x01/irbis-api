@@ -14,14 +14,14 @@ import java.util.stream.IntStream;
 @Repository
 public class RecordDAO {
     private final IrbisConnection connection;
-    private IFormatRecordsConverter format;
+    private final IFormatRecordsConverter format;
 
     public RecordDAO(IrbisConnection connection, IFormatRecordsConverter format) {
         this.connection = connection;
         this.format = format;
     }
 
-    public MarcRecord[] getAll() {
+    public List<MarcRecord> getAll() {
         try {
             int maxMFN = connection.getMaxMfn(connection.database);
             String[] lines = connection.formatRecords(format.getFormat(), IntStream.range(1, maxMFN).toArray());
@@ -34,7 +34,7 @@ public class RecordDAO {
                 result.add(record);
             }
 
-            return result.toArray(MarcRecord[]::new);
+            return result;
         } catch (IOException | IrbisException e) {
             e.printStackTrace();
         }
@@ -43,8 +43,7 @@ public class RecordDAO {
 
     public MarcRecord get(int mfn) {
         try {
-            MarcRecord record = connection.readRecord(connection.database, mfn);
-            return record;
+            return connection.readRecord(connection.database, mfn);
         } catch (IOException | IrbisException e) {
             e.printStackTrace();
         }
