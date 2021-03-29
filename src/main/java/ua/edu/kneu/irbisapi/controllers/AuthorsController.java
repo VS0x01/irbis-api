@@ -5,27 +5,28 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ua.edu.kneu.irbisapi.dal.AuthorDTO;
-import ua.edu.kneu.irbisapi.services.AuthorService;
+import ua.edu.kneu.irbisapi.dal.AuthorMapper;
+import ua.edu.kneu.irbisapi.services.RecordService;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("authors")
 public class AuthorsController {
-    private final AuthorService authorService;
+    private final RecordService<AuthorDTO> authorService;
 
-    public AuthorsController(AuthorService authorService) {
+    public AuthorsController(RecordService<AuthorDTO> authorService) {
         this.authorService = authorService;
     }
 
     @GetMapping
     public List<AuthorDTO> index() {
-        return authorService.loadAllAuthors();
+        return authorService.loadAllRecords();
     }
 
     @GetMapping("{mfn}")
     public AuthorDTO show(@PathVariable int mfn) {
-        return authorService.loadAuthorByMfn(mfn);
+        return authorService.loadRecordByMfn(mfn);
     }
 
 }
