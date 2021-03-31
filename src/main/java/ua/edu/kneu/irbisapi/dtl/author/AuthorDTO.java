@@ -1,4 +1,4 @@
-package ua.edu.kneu.irbisapi.dal;
+package ua.edu.kneu.irbisapi.dtl.author;
 
 public class AuthorDTO {
     public final int id;

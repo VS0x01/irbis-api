@@ -24,7 +24,16 @@ public class RecordDAO {
     public List<MarcRecord> getAll() {
         try {
             int maxMFN = connection.getMaxMfn(connection.database);
-            String[] lines = connection.formatRecords(format.getFormat(), IntStream.range(1, maxMFN).toArray());
+            return get(IntStream.range(1, maxMFN).toArray());
+        } catch (IOException | IrbisException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public List<MarcRecord> get(int[] mfns) {
+        try {
+            String[] lines = connection.formatRecords(format.getFormat(), mfns);
             List<MarcRecord> result = new ArrayList<>();
 
             for (String line :

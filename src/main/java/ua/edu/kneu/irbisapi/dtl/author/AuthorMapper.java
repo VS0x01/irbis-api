@@ -1,9 +1,12 @@
-package ua.edu.kneu.irbisapi.dal;
+package ua.edu.kneu.irbisapi.dtl.author;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import ru.arsmagna.MarcRecord;
+import ua.edu.kneu.irbisapi.dtl.IRecordMapper;
 
 @Component
+@Qualifier("AuthorMapper")
 public class AuthorMapper implements IRecordMapper<AuthorDTO> {
     @Override
     public AuthorDTO map(MarcRecord record) {

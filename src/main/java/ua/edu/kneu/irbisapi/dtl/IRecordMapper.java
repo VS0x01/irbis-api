@@ -1,4 +1,4 @@
-package ua.edu.kneu.irbisapi.dal;
+package ua.edu.kneu.irbisapi.dtl;
 
 import org.springframework.stereotype.Component;
 import ru.arsmagna.MarcRecord;
