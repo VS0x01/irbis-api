@@ -1,13 +1,11 @@
 package ua.edu.kneu.irbisapi.dtl;
 
-import org.springframework.stereotype.Component;
 import ru.arsmagna.MarcRecord;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
 public interface IRecordMapper<DTO> {
     DTO map(MarcRecord record);
 

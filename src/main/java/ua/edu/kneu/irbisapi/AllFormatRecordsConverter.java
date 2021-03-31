@@ -18,11 +18,11 @@ public class AllFormatRecordsConverter implements IFormatRecordsConverter {
     @Override
     public MarcRecord formatRecordToMarc(String line) throws IOException {
         MarcRecord record = null;
-        String[] splitted = line.split(new String(IrbisEncoding.encode(IrbisEncoding.utf(), IrbisText.IRBIS_DELIMITER),
+        String[] split = line.split(new String(IrbisEncoding.encode(IrbisEncoding.utf(), IrbisText.IRBIS_DELIMITER),
                 IrbisEncoding.utf()).substring(0, 1));
-        if (Integer.parseInt(splitted[0].split("#")[0]) >= 0) {
+        if (Integer.parseInt(split[0].split("#")[0]) >= 0) {
             record = new MarcRecord();
-            record.parseSingle(splitted);
+            record.parseSingle(split);
         }
         return record;
     }
