@@ -7,3 +7,10 @@ API for Irbis server
     |:-------------:| ----------------- |
     | GET           | /authors          |
     | GET           | /authors/:id      |
+
+- Works:
+  
+    | Method        | Endpoint          |
+    |:-------------:| ----------------- |
+    | GET           | /works            |
+    | GET           | /works/:id        |
