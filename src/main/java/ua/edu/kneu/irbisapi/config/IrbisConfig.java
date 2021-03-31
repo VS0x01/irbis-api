@@ -52,9 +52,4 @@ public class IrbisConfig {
         return null;
     }
 
-    @Bean
-    public IFormatRecordsConverter getFormatRecordsConverter() {
-        return new AllFormatRecordsConverter();
-    }
-
 }

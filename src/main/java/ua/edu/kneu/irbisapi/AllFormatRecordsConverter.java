@@ -1,5 +1,6 @@
 package ua.edu.kneu.irbisapi;
 
+import org.springframework.stereotype.Component;
 import ru.arsmagna.IrbisEncoding;
 import ru.arsmagna.IrbisFormat;
 import ru.arsmagna.IrbisText;
@@ -7,6 +8,7 @@ import ru.arsmagna.MarcRecord;
 
 import java.io.IOException;
 
+@Component
 public class AllFormatRecordsConverter implements IFormatRecordsConverter {
     @Override
     public String getFormat() {

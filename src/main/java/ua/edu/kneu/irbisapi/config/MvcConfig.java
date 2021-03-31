@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class WebConfig implements WebMvcConfigurer {
+public class MvcConfig implements WebMvcConfigurer {
     private final DBChooser dbChooser;
     private final List<String> patterns;
 
-    public WebConfig(DBChooser dbChooser) {
+    public MvcConfig(DBChooser dbChooser) {
         this.dbChooser = dbChooser;
         patterns = Arrays.stream(Databases.values())
                 .map(v -> "/" + v.toString().toLowerCase() + "/**")
