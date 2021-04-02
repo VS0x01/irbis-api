@@ -59,4 +59,13 @@ public class RecordDAO {
         return null;
     }
 
+    public List<MarcRecord> search(String req) {
+        try {
+            return get(connection.search(req));
+        } catch (IOException | IrbisException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

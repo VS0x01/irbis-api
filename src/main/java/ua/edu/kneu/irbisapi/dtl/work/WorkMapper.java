@@ -8,6 +8,6 @@ import ua.edu.kneu.irbisapi.dtl.IRecordMapper;
 public class WorkMapper implements IRecordMapper<WorkDTO> {
     @Override
     public WorkDTO map(MarcRecord record) {
-        return new WorkDTO(record.fm(200, 'a'));
+        return new WorkDTO(record.fm(700, 'a'), record.fm(200, 'a'));
     }
 }

@@ -7,7 +7,7 @@ import ua.edu.kneu.irbisapi.services.AbstractRecordService;
 import java.util.List;
 
 public abstract class AbstractController<DTO> {
-    private final AbstractRecordService<DTO> recordService;
+    protected final AbstractRecordService<DTO> recordService;
 
     public AbstractController(AbstractRecordService<DTO> recordService) {
         this.recordService = recordService;

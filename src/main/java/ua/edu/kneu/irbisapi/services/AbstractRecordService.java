@@ -6,8 +6,8 @@ import ua.edu.kneu.irbisapi.dtl.IRecordMapper;
 import java.util.List;
 
 public abstract class AbstractRecordService<DTO> {
-    private final RecordDAO recordDAO;
-    private final IRecordMapper<DTO> recordMapper;
+    protected final RecordDAO recordDAO;
+    protected final IRecordMapper<DTO> recordMapper;
 
     public AbstractRecordService(RecordDAO recordDAO, IRecordMapper<DTO> recordMapper) {
         this.recordDAO = recordDAO;
