@@ -22,6 +22,7 @@ public class AuthorMapper implements IRecordMapper<AuthorDTO> {
         return new AuthorDTO(record.mfn,
                 record.fm(210, 'g'),
                 record.fm(210, 'a'),
+                record.fm(910, 'p'),
                 IntStream.range(0, linkNames.size())
                         .boxed()
                         .collect(Collectors.toMap(
