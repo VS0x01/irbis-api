@@ -17,7 +17,7 @@ public class WorksController extends AbstractController<WorkDTO> {
     }
 
     @GetMapping("search")
-    public List<WorkDTO> search(@RequestParam String req) {
-        return ((WorkService) recordService).findWork(req);
+    public List<WorkDTO> search(@RequestParam String lastName) {
+        return ((WorkService) recordService).findWork(lastName);
     }
 }

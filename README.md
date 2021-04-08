@@ -10,7 +10,8 @@ API for Irbis server
 
 - Works:
   
-    | Method        | Endpoint          |
-    |:-------------:| ----------------- |
-    | GET           | /works            |
-    | GET           | /works/:id        |
+    | Method        | Endpoint          | Parameters            |
+    |:-------------:| ----------------- | --------------------- |
+    | GET           | /works            |                       |
+    | GET           | /works/:id        |                       |
+    | GET           | /works/search     | lastName              |      
