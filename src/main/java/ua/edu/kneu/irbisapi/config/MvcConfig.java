@@ -1,6 +1,8 @@
 package ua.edu.kneu.irbisapi.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import ua.edu.kneu.irbisapi.interceptors.DBChooser;
@@ -19,6 +21,11 @@ public class MvcConfig implements WebMvcConfigurer {
         patterns = Arrays.stream(Databases.values())
                 .map(v -> "/" + v.toString().toLowerCase() + "/**")
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**").allowedOrigins("http://localhost:8080", "https://vs0x01.github.io");
     }
 
     @Override
