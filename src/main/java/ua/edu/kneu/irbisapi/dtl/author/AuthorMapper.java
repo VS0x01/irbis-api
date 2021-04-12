@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 import ru.arsmagna.MarcRecord;
 import ua.edu.kneu.irbisapi.dtl.IRecordMapper;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -14,8 +15,14 @@ import java.util.stream.IntStream;
 public class AuthorMapper implements IRecordMapper<AuthorDTO> {
     @Override
     public AuthorDTO map(MarcRecord record) {
-        List<String> linkNames = Arrays.asList(record.fma(951, 't'));
+        List<String> linkNames = new ArrayList<String>(Arrays.asList(record.fma(951, 't')));
         List<String> linkRefs = Arrays.asList(record.fma(951, 'i'));
+
+        if (linkRefs.size() > linkNames.size()) {
+            linkNames.addAll(IntStream.range(0, linkRefs.size() - linkNames.size())
+                    .mapToObj(Integer::toString).collect(Collectors.toList()));
+        }
+
         Iterator<String> linkNamesIterator = linkNames.iterator();
         Iterator<String> linkRefsIterator = linkRefs.iterator();
 
