@@ -4,7 +4,7 @@ info:
 
 spring:
   profiles:
-    active: dev,wan
+    active: dev,lan
 
 irbis:
   host: 127.0.0.1
@@ -41,3 +41,12 @@ spring:
 
 irbis:
   host: 193.110.163.14
+---
+
+spring:
+  config:
+    activate:
+      on-profile: lan
+
+irbis:
+  host: 10.1.1.123

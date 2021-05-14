@@ -13,8 +13,8 @@ public class WorkService extends AbstractRecordService<WorkDTO> {
         super(recordDAO, recordMapper);
     }
 
-    public List<WorkDTO> findWork(String lastName) {
-        String req = "\"A=" + lastName.toUpperCase() + "$\"";
+    public List<WorkDTO> findWork(int authorId) {
+        String req = "\"AN=" + authorId + "\"";
         return recordMapper.map(recordDAO.search(req));
     }
 

@@ -14,4 +14,4 @@ API for Irbis server
     |:-------------:| ----------------- | --------------------- |
     | GET           | /works            |                       |
     | GET           | /works/:id        |                       |
-    | GET           | /works/search     | lastName              |      
+    | GET           | /works/search     | authorId              |      
