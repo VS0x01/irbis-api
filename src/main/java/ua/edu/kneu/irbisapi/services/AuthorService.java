@@ -18,7 +18,7 @@ public class AuthorService extends AbstractRecordService<AuthorDTO> {
     public List<AuthorDTO> loadAllRecords() {
         return super.loadAllRecords()
                 .stream()
-                .filter(author -> !author.links.isEmpty())
+                .filter(author -> author.workPlace != null)
                 .collect(Collectors.toList());
     }
 }
