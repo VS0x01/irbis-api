@@ -2,7 +2,7 @@ package ua.edu.kneu.irbisapi.dtl.work;
 
 import java.util.List;
 
-public class WorkDTO {
+public final class WorkDTO {
     public final int id;
     public final int authorId;
     public final String authorName;

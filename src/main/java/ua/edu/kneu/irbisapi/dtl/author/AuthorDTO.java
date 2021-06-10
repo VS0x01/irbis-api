@@ -2,7 +2,7 @@ package ua.edu.kneu.irbisapi.dtl.author;
 
 import java.util.Map;
 
-public class AuthorDTO {
+public final class AuthorDTO {
     public final int id;
     public final String firstName;
     public final String lastName;
