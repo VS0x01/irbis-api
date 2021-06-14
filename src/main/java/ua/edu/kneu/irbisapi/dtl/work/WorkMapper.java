@@ -17,7 +17,7 @@ public class WorkMapper implements IRecordMapper<WorkDTO> {
         final List<AuthorDTO> anotherAuthors = Arrays.stream(record.getField(701)).map(author -> {
             final String anotherAuthorId = author.getFirstSubFieldValue('3');
             return new AuthorDTO(anotherAuthorId != null ? Integer.parseInt(anotherAuthorId) : -1,
-                    author.getFirstSubFieldValue('B'), author.getFirstSubFieldValue('A'), "", null);
+                    author.getFirstSubFieldValue('B'), author.getFirstSubFieldValue('A'), "", null, null, null);
         }).collect(Collectors.toList());
         List<WorkDTO> content = Arrays.stream(record.getField(330)).map(field -> {
             final String contentAuthorId = field.getFirstSubFieldValue('!');
