@@ -14,7 +14,7 @@ public class WorkService extends AbstractRecordService<WorkDTO> {
     }
 
     public List<WorkDTO> findWork(int authorId) {
-        String req = "\"AN=" + authorId + "$\"";
+        String req = "\"AN=" + authorId + "\"";
         return recordMapper.map(recordDAO.search(req));
     }
 
