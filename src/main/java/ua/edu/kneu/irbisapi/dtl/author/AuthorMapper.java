@@ -22,7 +22,6 @@ public class AuthorMapper implements IRecordMapper<AuthorDTO> {
                 }));
         final String academicStatus = (record.getField(340).length > 0 ? record.getField(340)[0].getFirstSubFieldValue('A') : null);
         final String degree = (record.getField(340).length > 1 ? record.getField(340)[1].getFirstSubFieldValue('A') : null);
-        System.out.println(record.mfn);
         return new AuthorDTO(record.mfn, record.fm(210, 'g'), record.fm(210, 'a'), record.fm(910, 'p'), academicStatus, degree, links);
     }
 }
