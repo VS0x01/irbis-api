@@ -33,9 +33,14 @@ public class RecordDAO {
 
     public List<MarcRecord> get(int[] mfns) {
         try {
-            String[] lines = connection.formatRecords(format.getFormat(), mfns);
             List<MarcRecord> result = new ArrayList<>();
+            if(mfns.length == 1) {
+                result.add(get(mfns[0]));
+                return result;
+            }
 
+            String[] lines = connection.formatRecords(format.getFormat(), mfns);
+            
             for (String line :
                     lines) {
                 MarcRecord record = format.formatRecordToMarc(line);
