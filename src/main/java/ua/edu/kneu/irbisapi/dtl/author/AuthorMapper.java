@@ -20,8 +20,17 @@ public class AuthorMapper implements IRecordMapper<AuthorDTO> {
                     final String linkHref = link.getFirstSubFieldValue('i');
                     return linkHref != null ? linkHref : "";
                 }));
+        final int id = record.mfn;
+        final String firstName = record.fm(210, 'g');
+        final String lastName = record.fm(210, 'a');
+        final String workPlace = record.fm(910, 'p');
         final String academicStatus = (record.getField(340).length > 0 ? record.getField(340)[0].getFirstSubFieldValue('A') : null);
         final String degree = (record.getField(340).length > 1 ? record.getField(340)[1].getFirstSubFieldValue('A') : null);
-        return new AuthorDTO(record.mfn, record.fm(210, 'g'), record.fm(210, 'a'), record.fm(910, 'p'), academicStatus, degree, links);
+
+        AuthorDTOBuilder authorDTOBuilder = new AuthorDTOBuilder(new AuthorDTO(id, firstName, lastName, workPlace, academicStatus, degree, links, "dsf"));
+
+        authorDTOBuilder.setDescription(record.description);
+
+        return authorDTOBuilder.build();
     }
 }

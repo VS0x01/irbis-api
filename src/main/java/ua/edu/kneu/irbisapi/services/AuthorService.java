@@ -6,6 +6,7 @@ import ua.edu.kneu.irbisapi.dtl.author.AuthorDTO;
 import ua.edu.kneu.irbisapi.dtl.author.AuthorMapper;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -18,7 +19,7 @@ public class AuthorService extends AbstractRecordService<AuthorDTO> {
     public List<AuthorDTO> loadAllRecords() {
         return super.loadAllRecords()
                 .stream()
-                .filter(author -> author.workPlace != null)
+                .filter(author -> author.workPlace != null || !Optional.ofNullable(author.description).orElse("").isEmpty())
                 .collect(Collectors.toList());
     }
 }
