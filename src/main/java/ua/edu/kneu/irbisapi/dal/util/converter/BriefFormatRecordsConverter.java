@@ -1,11 +1,12 @@
-package ua.edu.kneu.irbisapi.dal.utils.converters;
+package ua.edu.kneu.irbisapi.dal.util.converter;
 
 import ru.arsmagna.FastNumber;
 import ru.arsmagna.IrbisFormat;
 import ru.arsmagna.MarcRecord;
-import ua.edu.kneu.irbisapi.dal.utils.IFormatRecordsConverter;
+import ua.edu.kneu.irbisapi.dal.util.IFormatRecordsConverter;
 
 public class BriefFormatRecordsConverter implements IFormatRecordsConverter {
+
     @Override
     public String getFormat() {
         return IrbisFormat.BRIEF;

@@ -1,10 +1,10 @@
-package ua.edu.kneu.irbisapi.interceptors;
+package ua.edu.kneu.irbisapi.interceptor;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import ua.edu.kneu.irbisapi.dal.RecordDAO;
-import ua.edu.kneu.irbisapi.dal.utils.FormatRecordsFabric;
-import ua.edu.kneu.irbisapi.dal.utils.RecordFormats;
+import ua.edu.kneu.irbisapi.dal.util.FormatRecordsFabric;
+import ua.edu.kneu.irbisapi.dal.util.RecordFormats;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

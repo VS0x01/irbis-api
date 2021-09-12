@@ -1,4 +1,4 @@
-package ua.edu.kneu.irbisapi.dal.utils;
+package ua.edu.kneu.irbisapi.dal.util;
 
 import ru.arsmagna.MarcRecord;
 

@@ -4,8 +4,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import ua.edu.kneu.irbisapi.interceptors.DBChooser;
-import ua.edu.kneu.irbisapi.interceptors.FormatChooser;
+import ua.edu.kneu.irbisapi.interceptor.DBChooser;
+import ua.edu.kneu.irbisapi.interceptor.FormatChooser;
 
 import java.util.Arrays;
 import java.util.List;

@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 import ru.arsmagna.IrbisConnection;
 import ru.arsmagna.IrbisException;
 import ru.arsmagna.MarcRecord;
-import ua.edu.kneu.irbisapi.dal.utils.IFormatRecordsConverter;
+import ua.edu.kneu.irbisapi.dal.util.IFormatRecordsConverter;
 
 import java.io.IOException;
 import java.util.ArrayList;

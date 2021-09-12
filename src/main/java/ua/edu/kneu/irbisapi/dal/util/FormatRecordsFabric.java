@@ -1,7 +1,7 @@
-package ua.edu.kneu.irbisapi.dal.utils;
+package ua.edu.kneu.irbisapi.dal.util;
 
-import ua.edu.kneu.irbisapi.dal.utils.converters.AllFormatRecordsConverter;
-import ua.edu.kneu.irbisapi.dal.utils.converters.BriefFormatRecordsConverter;
+import ua.edu.kneu.irbisapi.dal.util.converter.AllFormatRecordsConverter;
+import ua.edu.kneu.irbisapi.dal.util.converter.BriefFormatRecordsConverter;
 
 public class FormatRecordsFabric {
 
@@ -18,4 +18,5 @@ public class FormatRecordsFabric {
                 return new AllFormatRecordsConverter();
         }
     }
+
 }

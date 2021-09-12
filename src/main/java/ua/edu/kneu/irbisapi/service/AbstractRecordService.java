@@ -1,4 +1,4 @@
-package ua.edu.kneu.irbisapi.services;
+package ua.edu.kneu.irbisapi.service;
 
 import ua.edu.kneu.irbisapi.dal.RecordDAO;
 import ua.edu.kneu.irbisapi.dtl.IRecordMapper;

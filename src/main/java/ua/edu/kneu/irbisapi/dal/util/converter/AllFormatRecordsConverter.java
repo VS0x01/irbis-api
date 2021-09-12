@@ -1,14 +1,15 @@
-package ua.edu.kneu.irbisapi.dal.utils.converters;
+package ua.edu.kneu.irbisapi.dal.util.converter;
 
 import ru.arsmagna.IrbisEncoding;
 import ru.arsmagna.IrbisFormat;
 import ru.arsmagna.IrbisText;
 import ru.arsmagna.MarcRecord;
-import ua.edu.kneu.irbisapi.dal.utils.IFormatRecordsConverter;
+import ua.edu.kneu.irbisapi.dal.util.IFormatRecordsConverter;
 
 import java.io.IOException;
 
 public class AllFormatRecordsConverter implements IFormatRecordsConverter {
+
     @Override
     public String getFormat() {
         return IrbisFormat.ALL;
@@ -27,4 +28,5 @@ public class AllFormatRecordsConverter implements IFormatRecordsConverter {
         }
         return record;
     }
+
 }
