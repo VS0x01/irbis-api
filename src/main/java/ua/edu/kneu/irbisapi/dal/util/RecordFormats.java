@@ -4,7 +4,9 @@ import ru.arsmagna.IrbisFormat;
 
 public enum RecordFormats {
     ALL(IrbisFormat.ALL),
-    BRIEF(IrbisFormat.BRIEF);
+    BRIEF(IrbisFormat.BRIEF),
+    KNNAUK("@Kn_nauk"),
+    ASPNAUK("@ASP_nauk");
 
     private final String value;
 

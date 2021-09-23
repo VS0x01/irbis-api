@@ -2,10 +2,11 @@ package ua.edu.kneu.irbisapi.dal.util;
 
 import ua.edu.kneu.irbisapi.dal.util.converter.AllFormatRecordsConverter;
 import ua.edu.kneu.irbisapi.dal.util.converter.BriefFormatRecordsConverter;
+import ua.edu.kneu.irbisapi.dal.util.converter.DefaultFormatRecordsConverter;
 
-public class FormatRecordsFabric {
+public class FormatRecordsFactory {
 
-    private FormatRecordsFabric() {
+    private FormatRecordsFactory() {
     }
 
     public static IFormatRecordsConverter getConverter(RecordFormats format) {
@@ -15,7 +16,7 @@ public class FormatRecordsFabric {
             case BRIEF:
                 return new BriefFormatRecordsConverter();
             default:
-                return new AllFormatRecordsConverter();
+                return new DefaultFormatRecordsConverter(format);
         }
     }
 

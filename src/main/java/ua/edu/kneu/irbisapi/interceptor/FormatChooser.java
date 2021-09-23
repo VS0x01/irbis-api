@@ -3,7 +3,7 @@ package ua.edu.kneu.irbisapi.interceptor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import ua.edu.kneu.irbisapi.dal.RecordDAO;
-import ua.edu.kneu.irbisapi.dal.util.FormatRecordsFabric;
+import ua.edu.kneu.irbisapi.dal.util.FormatRecordsFactory;
 import ua.edu.kneu.irbisapi.dal.util.RecordFormats;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +23,7 @@ public class FormatChooser implements HandlerInterceptor {
             throws Exception {
         final Optional<String> format = Optional.ofNullable(request.getParameter("format"));
         // TODO: replace this with better solution
-        recordDAO.setFormat(FormatRecordsFabric.getConverter(RecordFormats.valueOf(format.orElse("All").toUpperCase())));
+        recordDAO.setFormat(FormatRecordsFactory.getConverter(RecordFormats.valueOf(format.orElse("All").toUpperCase())));
         return true;
     }
 

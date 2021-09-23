@@ -20,7 +20,7 @@ public class BriefFormatRecordsConverter implements IFormatRecordsConverter {
         if (mfn > 0) {
             record = new MarcRecord();
             record.mfn = mfn;
-            record.description = parts[1];
+            record.description = parts[1].replaceAll("\r\n", "");
         }
         return record;
     }
