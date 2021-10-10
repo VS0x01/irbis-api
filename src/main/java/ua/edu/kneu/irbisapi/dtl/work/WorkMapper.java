@@ -15,8 +15,15 @@ import java.util.stream.Collectors;
 public class WorkMapper implements IRecordMapper<WorkDTO> {
     @Override
     public WorkDTO map(MarcRecord record) {
-        String authorId = Optional.ofNullable(record.fm(700, '3')).orElse("-1");
-        authorId = authorId.isBlank() ? "-1" : authorId;
+        int authorId = -1;
+        int year = -1;
+        try {
+            authorId = Integer.parseInt(Optional.ofNullable(record.fm(700, '3')).orElse("-1"));
+            year = Integer.parseInt(Optional.ofNullable(record.fm(210, 'D')).orElse("-1"));
+        } catch(NumberFormatException e) {
+            System.out.println(e);
+            System.out.println(record.mfn);
+        }
 
         final List<AuthorDTO> anotherAuthors = Arrays.stream(record.getField(701)).map(author -> {
             final String anotherAuthorId = Optional.ofNullable(author.getFirstSubFieldValue('3')).orElse("-1");
@@ -32,8 +39,13 @@ public class WorkMapper implements IRecordMapper<WorkDTO> {
         }).collect(Collectors.toList());
 
         WorkDTOBuilder workDTOBuilder = new WorkDTOBuilder(record.mfn, record.fm(200, 'a'));
-        workDTOBuilder.setAuthorId(Integer.parseInt(authorId)).setAuthorName(record.fm(700, 'a')).setAnotherAuthors(anotherAuthors).setContent(content);
-        workDTOBuilder.setDescription(record.description);
+        workDTOBuilder
+                .setAuthorId(authorId)
+                .setAuthorName(record.fm(700, 'a'))
+                .setAnotherAuthors(anotherAuthors)
+                .setContent(content)
+                .setDescription(record.description)
+                .setYear(year);
         return workDTOBuilder.build();
     }
 }

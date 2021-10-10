@@ -12,6 +12,7 @@ public final class WorkDTO {
     public List<AuthorDTO> anotherAuthors;
     public List<WorkDTO> content;
     public String pages;
+    public int year;
 
     public String description;
 
@@ -28,7 +29,7 @@ public final class WorkDTO {
         this.pages = pages;
     }
 
-    public WorkDTO(int id, int authorId, String authorName, List<AuthorDTO> anotherAuthors, String title, List<WorkDTO> content, String pages) {
+    public WorkDTO(int id, int authorId, String authorName, List<AuthorDTO> anotherAuthors, String title, List<WorkDTO> content, String pages, int year) {
         this.id = id;
         this.authorId = authorId;
         this.authorName = authorName;
@@ -36,5 +37,6 @@ public final class WorkDTO {
         this.title = title;
         this.content = content;
         this.pages = pages;
+        this.year = year;
     }
 }

@@ -40,6 +40,11 @@ public class WorkDTOBuilder {
         return this;
     }
 
+    public WorkDTOBuilder setYear(int year) {
+        workDTO.year = year;
+        return this;
+    }
+
     public WorkDTO build() {
         return workDTO;
     }
