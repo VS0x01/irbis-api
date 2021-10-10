@@ -1,6 +1,7 @@
 package ua.edu.kneu.irbisapi.dal;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.annotation.RequestScope;
 import ru.arsmagna.IrbisConnection;
 import ru.arsmagna.IrbisException;
 import ru.arsmagna.MarcRecord;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 @Repository
+@RequestScope
 public class RecordDAO {
     private final IrbisConnection connection;
     private IFormatRecordsConverter format;
