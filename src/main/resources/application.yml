@@ -4,7 +4,7 @@ info:
 
 spring:
   profiles:
-    active: dev,lan
+    active: production
 
 irbis:
   host: 127.0.0.1
@@ -30,8 +30,13 @@ spring:
     activate:
       on-profile: production
 
+server:
+  port: 8081
+
 irbis:
   host: 10.1.1.3
+  user: 1
+  password: 1
 ---
 
 spring:
