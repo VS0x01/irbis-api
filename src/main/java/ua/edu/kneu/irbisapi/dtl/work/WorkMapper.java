@@ -19,7 +19,7 @@ public class WorkMapper implements IRecordMapper<WorkDTO> {
         int year = -1;
         try {
             authorId = Integer.parseInt(Optional.ofNullable(record.fm(700, '3')).orElse("-1"));
-            year = Integer.parseInt(Optional.ofNullable(record.fm(210, 'D')).orElse("-1"));
+            year = Integer.parseInt(Optional.ofNullable(record.fm(210, 'D')).orElse(Optional.ofNullable(record.fm(463, 'J')).orElse("-1")));
         } catch(NumberFormatException e) {
             System.out.println(e);
             System.out.println(record.mfn);
