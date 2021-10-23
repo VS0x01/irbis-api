@@ -15,3 +15,6 @@ API for Irbis server
     | GET           | /works            | format                |
     | GET           | /works/:id        | format                |
     | GET           | /works/search     | authorId (required)   |      
+
+Parameters:
+    |||

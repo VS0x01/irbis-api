@@ -45,6 +45,11 @@ public class WorkDTOBuilder {
         return this;
     }
 
+    public WorkDTOBuilder setLinks(List<String> links) {
+        workDTO.links = links;
+        return this;
+    }
+
     public WorkDTO build() {
         return workDTO;
     }
