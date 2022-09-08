@@ -1,4 +1,4 @@
-package ua.edu.kneu.irbisapi.interceptors;
+package ua.edu.kneu.irbisapi.interceptor;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;

@@ -3,15 +3,18 @@ API for Irbis server
 
 - Authors:
 
-    | Method        | Endpoint          |
-    |:-------------:| ----------------- |
-    | GET           | /authors          |
-    | GET           | /authors/:id      |
+    | Method        | Endpoint          | Parameters            |
+    |:-------------:| ----------------- | --------------------- |
+    | GET           | /authors          | format                |
+    | GET           | /authors/:id      | format                |
 
 - Works:
   
     | Method        | Endpoint          | Parameters            |
     |:-------------:| ----------------- | --------------------- |
-    | GET           | /works            |                       |
-    | GET           | /works/:id        |                       |
-    | GET           | /works/search     | authorId              |      
+    | GET           | /works            | format                |
+    | GET           | /works/:id        | format                |
+    | GET           | /works/search     | authorId (required)   |      
+
+Parameters:
+    |||
